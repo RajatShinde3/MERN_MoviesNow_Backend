@@ -3,7 +3,6 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const auth = require('../middleware/auth')
-const { commentOnPost, deleteComment } = require('../controllers/post')
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, './uploads');
@@ -252,13 +251,6 @@ router.delete('/posts/:id', (req, res, next) => {
 
 
 // For Comment Section 
-
-
-router
-  .route("/api/v1/post/comment/:id")
-  .put(auth, commentOnPost)
-  .delete(auth, deleteComment);
-
 
 
 

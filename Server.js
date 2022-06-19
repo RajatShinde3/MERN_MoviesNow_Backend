@@ -6,7 +6,6 @@ const cors = require('cors');
 const errorHandler = require("./middleware/error");
 const fileUpload = require('express-fileupload');
 const cookieParser = require('cookie-parser');
-// const comments = require("./routes/comments");
 const app = express();
 
 app.use(bodyparser.json());
@@ -25,7 +24,7 @@ app.get("/", (req, res, next) => {
 });
 
 // Connecting Routes
-// app.use("/api/comments", comments);
+
 app.use('/', require('./routes/indexpost'));
 app.use('/user', require('./routes/userRouter'));
 app.use('/api', require('./routes/upload'));

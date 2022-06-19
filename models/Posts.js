@@ -56,18 +56,8 @@ const postSchema = new mongoose.Schema(
         },
         Download: [DownloadHeading],
 
-        comments: [
-            {
-              user: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "Users",
-              },
-              comment: {
-                type: String,
-                required: true,
-              },
-            },
-          ],
+        blog_comments:[{type: mongoose.Schema.Types.ObjectId, ref: 'BlogComment' }],
+
 
         date: {
             type: Date,
